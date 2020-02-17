@@ -23,6 +23,15 @@ cardImage: "images/king-of-diamonds.png"
 ];
 
 var cardsInPlay = [];
+function resetBoard() {
+	for(let i = 0; i < cards.length; i ++){
+		var board = document.querySelector('img');
+		board.parentNode.removeChild(board);
+	}
+	createBoard();
+}
+document.getElementsByTagName('button')[0].addEventListener('click', resetBoard);
+
 function createBoard() {
 	for (var i = 0; i < cards.length; i++) {
 		var cardElement = document.createElement('img');
@@ -51,3 +60,7 @@ function flipCard() {
 	}
 }
 createBoard ();
+
+
+
+
